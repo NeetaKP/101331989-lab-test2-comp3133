@@ -1,3 +1,8 @@
+.body{
+    width: 50%;
+    align-self: center;
+    margin: auto;
+}
 
 .mission-list {
     margin: 20px;
@@ -10,24 +15,25 @@
 
 
 .launches {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(40, 89, 157, 0.5); 
+   
 }
 
 
 .mission {
     border: 1px solid #121311;
     border-radius: 5px;
-    padding: 15px;
-    background-color: rgba(40, 157, 95, 0.5); 
+    padding: 25px;
+    margin-bottom: 20px;
+    background-color: rgba(40, 122, 157, 0.5); 
     cursor: pointer;
-    transition: background-color 0.3s; 
 }
 
 
 .mission:hover {
-    background-color: rgba(40, 157, 95, 0.7); 
+    background-color: rgba(145, 157, 40, 0.7); 
 }
 
 

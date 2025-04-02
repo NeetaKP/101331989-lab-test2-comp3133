@@ -1,13 +1,28 @@
 
+<div class="body">
+
 <div class="mission-list">
     <h2>Mission List</h2>
-    <div class="filter">
-        <button (click)="navigateToFilterMissions()">Filter Missions</button>
+    <div _ngcontent-wtc-c11=""><label _ngcontent-wtc-c11="" for="year">Filter by Launch Year:</label>
+        <input _ngcontent-wtc-c11="" type="text" id="year" name="year" class="ng-untouched ng-pristine ng-valid">
+        <button _ngcontent-wtc-c11="" id="btn-filter" class="btn-filter"> Filter </button>
+        <p _ngcontent-wtc-c11="">Launch</p><label _ngcontent-wtc-c11="">
+        <input _ngcontent-wtc-c11="" type="radio" name="successFilter" value="true" class="ng-untouched ng-pristine ng-valid"> Successful </label><label _ngcontent-wtc-c11="">
+        <input _ngcontent-wtc-c11="" type="radio" name="successFilter" value="false" class="ng-untouched ng-pristine ng-valid"> Failed </label>
+        <p _ngcontent-wtc-c11="">Landing</p>
+        <label _ngcontent-wtc-c11="">
+        <input _ngcontent-wtc-c11="" type="radio" name="landingFilter" value="true" class="ng-untouched ng-pristine ng-valid"> Successful </label>
+        <label _ngcontent-wtc-c11="">
+        <input _ngcontent-wtc-c11="" type="radio" name="landingFilter" value="false" class="ng-untouched ng-pristine ng-valid"> Failed </label>
+        <br _ngcontent-wtc-c11="">
+        <button _ngcontent-wtc-c11="" id="btn-reset" class="btn-reset"> Reset Filters </button>
     </div>
+    <br>
+
     <div class="launches">
         <div *ngFor="let launch of filteredLaunches" class="mission" [routerLink]="['/missions', launch.flight_number]">
             <div class="launch">
-                <img [src]="launch.links.mission_patch_small" alt="Mission Patch">
+                <img [src]="launch.links.mission_patch_small" style="height:50px;" alt="Mission Patch">
                 <h3>{{ launch.mission_name }}</h3>
                 <p><strong>Launch Year:</strong> {{ launch.launch_year }}</p>
                 <p><strong>Details:</strong> {{ launch.details }}</p>
@@ -16,5 +31,6 @@
     </div>
 </div>
 
+</div>
 
 

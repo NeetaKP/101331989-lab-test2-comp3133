@@ -7,19 +7,22 @@ import { Launch } from './launch.model';
   providedIn: 'root'
 })
 export class SpaceXService {
-  private apiUrl = 'https://api.spacexdata.com/v3/launches';
+
+  private url = 'https://api.spacexdata.com/v3/launches';
 
   constructor(private http: HttpClient) {}
 
-  getLaunches(): Observable<Launch[]> {
-    return this.http.get<Launch[]>(this.apiUrl);
-  }
-
-  getLaunchByYear(year: string): Observable<Launch[]> {
-    return this.http.get<Launch[]>(`${this.apiUrl}?launch_year=${year}`);
-  }
-
   getLaunchByFlightNumber(flightNumber: string): Observable<Launch> {
-    return this.http.get<Launch>(`${this.apiUrl}/${flightNumber}`);
+    return this.http.get<Launch>(`${this.url}/${flightNumber}`);
   }
+
+  getLaunchByYear(srchYear: string): Observable<Launch[]> {
+    return this.http.get<Launch[]>(`${this.url}?launch_year=${srchYear}`);
+  }
+
+
+  getLaunches(): Observable<Launch[]> {
+    return this.http.get<Launch[]>(this.url);
+  }
+
 }
